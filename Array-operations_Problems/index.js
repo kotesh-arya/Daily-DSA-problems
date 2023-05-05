@@ -140,7 +140,7 @@ function findMaxDifference(arr) {
 
 // LEETCODE Problems
 
-// Q: Given a 0-indexed integer array nums, find a 0-indexed integer array answer where:
+// Question 1: Given a 0-indexed integer array nums, find a 0-indexed integer array answer where:
 
 // answer.length == nums.length.
 // answer[i] = |leftSum[i] - rightSum[i]|.
@@ -192,10 +192,10 @@ function getLeftAndRightSumDifferences(nums) {
   console.log(differenceArray);
 }
 
-// getLeftAndRightSumDifferences(nums); //invoke this to see the result
+// getLeftAndRightSumDifferences(nums); --->invoke this to view the result
 // --------------------------------------------------------------------------
 
-// Given a positive integer n, find the sum of all integers in the range [1, n] inclusive that are divisible by 3, 5, or 7.
+// Question 2:Given a positive integer n, find the sum of all integers in the range [1, n] inclusive that are divisible by 3, 5, or 7.
 
 // Return an integer denoting the sum of all numbers in the given range satisfying the constraint.
 
@@ -229,5 +229,37 @@ function divisorsSum(n) {
   }
   console.log(summation);
 }
-// divisorsSum(9);
+// divisorsSum(9);   --->invoke this to view the result
 // ----------------------------------------------------------------------
+
+// Question 3:You are given a positive integer array nums. The element sum is the sum of all the elements in nums.
+// The digit sum is the sum of all the digits (not necessarily distinct) that appear in nums.
+// Return the absolute difference between the element sum and digit sum of nums.
+
+// Note that the absolute difference between two integers x and y is defined as |x - y|.
+
+// Input: nums = [1,15,6,3]
+// Output: 9
+// Explanation:
+// The element sum of nums is 1 + 15 + 6 + 3 = 25.
+// The digit sum of nums is 1 + 1 + 5 + 6 + 3 = 16.
+// The absolute difference between the element sum and digit sum is |25 - 16| = 9.
+let nums1 = [1, 15, 6, 3];
+function sumDifference(nums1) {
+  let elementSum = 0;
+  let digitSum = 0;
+
+  for (let i = 0; i < nums.length; i++) {
+    elementSum += nums1[i];
+    let digitArray = nums1[i].toString().split("");
+    // console.log(digitArray);
+    for (let j = 0; j < digitArray.length; j++) {
+      digitSum += Number(digitArray[j]);
+      console.log(Number(digitArray[j]));
+    }
+  }
+  console.log("elementSum", elementSum);
+  console.log("digitSum", digitSum);
+  console.log(Math.abs(elementSum - digitSum));
+}
+// sumDifference(nums1);   --->invoke this to view the result
