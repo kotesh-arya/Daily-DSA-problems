@@ -263,3 +263,22 @@ function sumDifference(nums1) {
   console.log(Math.abs(elementSum - digitSum));
 }
 // sumDifference(nums1);   --->invoke this to view the result
+
+
+//  30 April Session Problems
+
+const arr = [1, 1, 1, 2, 2, 3, 3, 3, 3, 4, 5, 6, 7];
+
+function getFrequency(arr) {
+  let counter = 1;
+  for (let i = 0; i <= arr.length - 1; i++) {
+    // console.log(arr[i - 1], arr[i]);
+    if (arr[i] === arr[i + 1]) {
+      counter++;
+    } else {
+      console.log(`Frequency of ${arr[i]} is ${counter}`); //We are accessing the counter variable here because, this is the end for repetition of a particular element and we are resetting the counter to 1 right below :)
+      counter = 1;
+    }
+  }
+}
+// getFrequency(arr);
