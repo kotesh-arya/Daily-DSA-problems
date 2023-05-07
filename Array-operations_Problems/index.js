@@ -94,7 +94,6 @@ console.log(getSecondLargestElement(arr2), 'result');
 // }
 // console.log(reversedArr);
 
-
 // -------------------------- 27 April Problems + 3 Leetcode----------
 
 // Q1: Find the leader in the Array
@@ -182,8 +181,8 @@ function getLeftAndRightSumDifferences(nums) {
       rightSum[i] = rightSummation;
     }
   }
-  console.log(leftSum, "Left Sum");
-  console.log(rightSum, "Right Sum");
+  console.log(leftSum, 'Left Sum');
+  console.log(rightSum, 'Right Sum');
 
   let differenceArray = [];
   for (let i = 0; i < leftSum.length; i++) {
@@ -251,19 +250,18 @@ function sumDifference(nums1) {
 
   for (let i = 0; i < nums.length; i++) {
     elementSum += nums1[i];
-    let digitArray = nums1[i].toString().split("");
+    let digitArray = nums1[i].toString().split('');
     // console.log(digitArray);
     for (let j = 0; j < digitArray.length; j++) {
       digitSum += Number(digitArray[j]);
       console.log(Number(digitArray[j]));
     }
   }
-  console.log("elementSum", elementSum);
-  console.log("digitSum", digitSum);
+  console.log('elementSum', elementSum);
+  console.log('digitSum', digitSum);
   console.log(Math.abs(elementSum - digitSum));
 }
 // sumDifference(nums1);   --->invoke this to view the result
-
 
 //  30 April Session Problems
 
@@ -282,3 +280,64 @@ function getFrequency(arr) {
   }
 }
 // getFrequency(arr);
+
+// Easy level leetcode problems on array
+
+//  Given an array nums of integers, return how many of them contain an even number of digits.
+let digits = [12, 345, 2, 6, 7896];
+
+function findNumbers(nums) {
+  let evenElementCounter = 0;
+  for (let i = 0; i < nums.length; i++) {
+    if (nums[i].toString().length % 2 === 0) {
+      evenElementCounter++;
+    }
+  }
+  return evenElementCounter;
+}
+// console.log(findNumbers(digits));
+// ---------------------------------------------------------------------
+// Given a zero-based permutation nums (0-indexed), build an array ans of the same length where ans[i] = nums[nums[i]] for each 0 <= i < nums.length and return it.
+
+// A zero-based permutation nums is an array of distinct integers from 0 to nums.length - 1 (inclusive).
+
+// Input: nums = [0,2,1,5,3,4]
+// Output: [0,1,2,4,5,3]
+// Explanation: The array ans is built as follows:
+// ans = [nums[nums[0]], nums[nums[1]], nums[nums[2]], nums[nums[3]], nums[nums[4]], nums[nums[5]]]
+//     = [nums[0], nums[2], nums[1], nums[5], nums[3], nums[4]]
+//     = [0,1,2,4,5,3]
+let numbers = [0, 2, 1, 5, 3, 4];
+function buildArray(nums) {
+  let ans = [];
+  for (let i = 0; i < nums.length; i++) {
+    ans[i] = nums[nums[i]];
+  }
+  return ans;
+}
+// console.log(buildArray(numbers));
+
+// ---------------------------------------------------------------------
+
+// Concatenation of array
+// Given an integer array nums of length n, you want to create an array ans of length 2n where ans[i] == nums[i] and ans[i + n] == nums[i] for 0 <= i < n (0-indexed).
+
+// Specifically, ans is the concatenation of two nums arrays.
+
+// Return the array ans.
+
+// Input: nums = [1,2,1]
+// Output: [1,2,1,1,2,1]
+// Explanation: The array ans is formed as follows:
+// - ans = [nums[0],nums[1],nums[2],nums[0],nums[1],nums[2]]
+// - ans = [1,2,1,1,2,1]
+let digits2 = [1, 2, 1];
+function getConcatenation(nums) {
+  let arr = [];
+  for (let i = 0; i < nums.length; i++) {
+    arr[i] = nums[i];
+    arr[i + nums.length] = nums[i];
+  }
+  return arr;
+}
+console.log(getConcatenation(digits2));
